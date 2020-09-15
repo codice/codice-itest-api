@@ -19,12 +19,20 @@
 
     <groupId>org.codice</groupId>
     <artifactId>codice-itest-api</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.release.plugin.version>3.0.0-M1</maven.release.plugin.version>
     </properties>
+
+    <scm>
+        <url>https://github.com/codice/codice-itest-api</url>
+        <connection>scm:git:https://github.com/codice/codice-itest-api.git</connection>
+        <developerConnection>scm:git:https://github.com/codice/codice-itest-api.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 
     <distributionManagement>
         <repository>
@@ -32,4 +40,18 @@
             <url>${releases.repository.url}</url>
         </repository>
     </distributionManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven.release.plugin.version}</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <preparationGoals>clean verify install</preparationGoals>
+                    <pushChanges>false</pushChanges>
+                </configuration>
+            </plugin>
+        </plugins>	
+    </build>
 </project>
