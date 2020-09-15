@@ -41,7 +41,7 @@ pipeline {
         stage('Checkout repo') {
             steps {
                 retry(3) {
-                    checkoutscm
+                    checkout scm
                 }
             }
         }
