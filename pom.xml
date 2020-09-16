@@ -36,6 +36,10 @@
 
     <distributionManagement>
         <repository>
+            <id>snapshots</id>
+            <url>${snapshots.repository.url}</url>
+        </repository>
+        <repository>
             <id>releases</id>
             <url>${releases.repository.url}</url>
         </repository>
