@@ -27,11 +27,11 @@ public interface TestResultFactory {
 
     /**
      * @param testName - the name of the test that failed.
-     * @param exceptionMessage - a description of the failure.
+     * @param throwable - the exception or error that was raised.
      * @param startTime - the start time of the test
      * @return an appropriate TestResult object.
      */
-    TestResult fail(String testName, String exceptionMessage, Instant startTime, Instant endTime);
+    TestResult fail(String testName, Throwable throwable, Instant startTime, Instant endTime);
 
     /**
      * @param testName - the name of the test that failed.
